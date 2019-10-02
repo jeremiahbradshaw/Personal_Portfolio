@@ -15,6 +15,8 @@
 
 img{
   width:500px;
+  padding:10px;
+  justify-content: center;
   display: flex;
 }
 
@@ -27,17 +29,17 @@ padding: 0;
 width: 400px;
 }
 
+
+
+
 ul{
     list-style: none;
-    width: 300px;
-    justify-content: space-between;
-    
-}
+    }
 
 #nav-list a {
     font-family: futura;
     text-decoration: none;
-    color: white;
+    color: beige;
     padding-top: 0px;
 }
 #nav-list a:hover {
@@ -52,27 +54,56 @@ ul{
     width: 100%;
     height: 100vh;
     background-color: beige;
+    color: salmon;
     font-family: futura; 
 }
 #projects{
     background: salmon;
-    display: flex;
-    justify-content: center;
     color: white;
   }
 a{
 font-family: futura;
-color: salmon;
 font-size: 2.2rem;
 justify-content: center;
 display: flex;
+text-decoration: none;
 }
 
+
+
+
+
+
+
+#projects{
+display:flex;
+
 }
+#projects-grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: salmon;
+  font-family: futura; }
+
+
 @media  (max-width: 28.75em) {
     .ul {
       font-size: 4rem;
     }
   }
 
-  
+  #contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+    font-family: futura; 
+    color: salmon;
+  }
+      
