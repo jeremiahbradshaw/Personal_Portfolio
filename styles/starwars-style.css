@@ -1,0 +1,53 @@
+*{
+    font-family: marsek;
+    background: #000;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    
+}
+
+button{
+    color: black;
+    background-color: yellow;
+    padding: 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    border: none;
+    
+}
+
+h3,p{
+    font-family: marsek;
+    color: yellow;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+    align-content: center;
+    padding: 8px;
+}
+
+img{
+     width: 200px
+}
+
