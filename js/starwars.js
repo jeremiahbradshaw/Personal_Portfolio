@@ -2,28 +2,55 @@ import { people } from '/assets/people.js'
 const peopledata = people
 
 let mainHeader = document.querySelector('header')
-let mainArea = document.querySelector("main")
+let mainArea = document.querySelector("#starwars")
 
-function sortAssets(){
-    alert(1)
-    }
+let Male = people.filter(MalePeople => MalePeople["gender"] == "male")
+console.log (Male)
 
+let Female = people.filter(FemalePeople => FemalePeople["gender"] == "female")
+console.log (Female)
 
-const button = document.querySelector('button');
+let maleBtn = document.getElementById("male").addEventListener('click', () => {
+    cardMaker(Male)
+})
+
+let femaleBtn = document.getElementById("female").addEventListener('click', () => {
+    cardMaker(Female)
+})
 const allDivs = mainArea.querySelectorAll('div')
-button.onclick = sortAssets
-mainArea.appendChild(button)     
-   
-peopledata.forEach((person) => { 
+ 
+function cardMaker(arr){
+    while (mainArea.firstChild) {
+        mainArea.removeChild(mainArea.firstChild);
+    }
+        arr.forEach((person) => { 
+        let personDiv = document.createElement ('div')
+        let name = document.createElement ('h3')
+        let gender = document.createElement('p')
+        let pic = document.createElement ('img')
+        
+        personDiv.appendChild(name)
+        personDiv.appendChild(gender)
+        personDiv.appendChild(pic)
+    
+        let charNum = getCharNumber(person.url)
+    
+        name.textContent = person.name
+        gender.textContent = person.gender
+        pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+    
+        mainArea.appendChild(personDiv)  
+        })
+
+        }   
+
+     
+    
+        peopledata.forEach((person) => { 
     let personDiv = document.createElement ('div')
     let name = document.createElement ('h3')
     let gender = document.createElement('p')
     let pic = document.createElement ('img')
-    
-    
-
-    
-    
     
     personDiv.appendChild(name)
     personDiv.appendChild(gender)
@@ -51,16 +78,9 @@ peopledata.forEach((person) => {
 
 }
 
-   // let maleButton = document.createElement ('button')
-   // maleButton.textContent = 'maleCharacters'
-    //let femaleButton = document.createElement ('button')
-    //femaleButton.textContent = 'femaleCharacters'
-
-
 const maleCharacters = people.filter(person => person.gender === "male")
 
 const femaleCharacters = people.filter(person => person.gender === "female")
 
-console.log(maleCharacters)
-console.log(femaleCharacters)
+
 

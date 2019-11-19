@@ -15,9 +15,15 @@ console.log(theData)
      getAPIData(pokemon.url)
      .then(pokedata => {
          console.log(pokedata)
+         populateDOM(pokedata)
      })
  }
       
+document.querySelector ('#pokeButton').addEventListener('click',() => {
+    populateDOM()
+}
+)
+
 
 })
 let mainArea = document.querySelector('main')
