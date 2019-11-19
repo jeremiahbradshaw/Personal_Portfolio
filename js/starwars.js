@@ -1,68 +1,46 @@
 import { people } from '/assets/people.js'
-
-
-
+const peopledata = people
 
 let mainHeader = document.querySelector('header')
 let mainArea = document.querySelector("main")
 
-const peopledata = people
+function sortAssets(){
+    alert(1)
+    }
+
+
 const button = document.querySelector('button');
 const allDivs = mainArea.querySelectorAll('div')
-     
-
-    let maleButton = document.createElement ('button')
-     maleButton.textContent = "Male Characters"
-     maleButton.addEventListener('click', () => {
-     femaleCharacters.forEach(elt => {
-     let matchedDiv = allDivs.filter(element => {
-         return element.firstChild.textContent === elt.name
-     })
-     matchedDiv[0].setAttribute("style","display: none;")
-     })
-    })
-
-     let femaleButton = document.createElement ('button')
-     femaleButton.textContent = "Female Characters"
-     femaleButton.addEventListener('click', event => {
-     maleCharacters.forEach(elt => {
-     let matchedDiv = allDivs.filter(element =>{
-     return element.firstChild.textContent === elt.name
-     })
-     matchedDiv[0].setAttribute("style","display: none;")
-     })
-    })
-
-mainHeader.appendChild(maleButton)
-mainHeader.appendChild(femaleButton)
-
+button.onclick = sortAssets
+mainArea.appendChild(button)     
+   
 peopledata.forEach((person) => { 
     let personDiv = document.createElement ('div')
     let name = document.createElement ('h3')
     let gender = document.createElement('p')
     let pic = document.createElement ('img')
+    
+    
 
+    
+    
+    
     personDiv.appendChild(name)
     personDiv.appendChild(gender)
     personDiv.appendChild(pic)
 
-    //pic.setAttribute('class','picDivs')
-
     let charNum = getCharNumber(person.url)
 
-name.textContent = person.name
-gender.textContent = person.gender
-pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+    name.textContent = person.name
+    gender.textContent = person.gender
+    pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+
+    mainArea.appendChild(personDiv)  
+    })
 
 
-  
- 
 
-   
-mainArea.appendChild(personDiv)  
-})
-
-function getCharNumber(charURL){
+    function getCharNumber(charURL){
     let end = charURL.lastIndexOf('/')
     let charID = charURL.substring(end -2, end)
     if(charID.indexOf('/') !== -1 ) {
