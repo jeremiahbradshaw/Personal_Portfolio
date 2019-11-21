@@ -10,6 +10,9 @@ console.log (Male)
 let Female = people.filter(FemalePeople => FemalePeople["gender"] == "female")
 console.log (Female)
 
+let na = people.filter(naPeople => naPeople["gender"] == "n/a")
+console.log (na)
+
 let maleBtn = document.getElementById("male").addEventListener('click', () => {
     cardMaker(Male)
 })
@@ -17,6 +20,11 @@ let maleBtn = document.getElementById("male").addEventListener('click', () => {
 let femaleBtn = document.getElementById("female").addEventListener('click', () => {
     cardMaker(Female)
 })
+
+let naBtn = document.getElementById("n/a").addEventListener('click', () => {
+    cardMaker(na)
+})
+
 const allDivs = mainArea.querySelectorAll('div')
  
 function cardMaker(arr){
@@ -77,6 +85,8 @@ function cardMaker(arr){
     }
 
 }
+
+const naCharacters = people.filter(person => person.gender === "n/a")
 
 const maleCharacters = people.filter(person => person.gender === "male")
 
