@@ -20,12 +20,22 @@ button{
     
 }
 
-h3,p{
+h3{
     font-family: marsek;
     color: yellow;
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+p{
+    font-family: marsek;
+    color: yellow;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+}
+
+
 
 main {
     display: grid;
