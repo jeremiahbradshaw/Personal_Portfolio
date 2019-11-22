@@ -1,58 +1,82 @@
-async function getAPIData(url){
-    try { 
-    const response = await fetch(url)
-    const data = await response.json()
-    return data 
-    } catch (error) { 
-      console.error(error)
+class Pokemon{
+constructor(id,name,stats){
+    this.id = id
+    this.name = name
+    this.base_stat = stats
+}}
+
+async function getAPIData(url) {
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error(error)
     }
 }
 
-const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
-.then(data => {
-console.log(theData)
- for (const pokemon of data.results) {
-     getAPIData(pokemon.url)
-     .then(pokedata => {
-         console.log(pokedata)
-         populateDOM(pokedata)
-     })
- }
-      
-document.querySelector ('#pokeButton').addEventListener('click',() => {
-    populateDOM()
-}
-)
+const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
+    .then(data => {
+        console.log(theData)
+        for (const pokemon of data.results) {
+            getAPIData(pokemon.url)
+                .then(pokedata => {
+                    console.log(pokedata)
+                    populateDOM(pokedata)
+                })
+        }
 
 
-})
+        document.querySelector('#pokeButton').addEventListener('click', () => {
+            populateDOM()
+        })
+
+
+    })
 let mainArea = document.querySelector('main')
 
     function populateDOM(single_pokemon) {
-    pokeArray.forEach (pokemon => {
-    console.log(pokemon)
-    let pokeDiv = document.createElement('div')
-    let name = document.createElement ('h3')
-    let pic = document.createElemnt ('img')
+    let pokeCard = document.createElement('div')
+    let pokeFront = document.createElement('div')
+    let pokeBack = document.createElement('div')
     
-    let pokeNum = getPokeNumber(single_pokemon.url)
-   
-    name.textContent = single_pokemon.name
-    
-    pic.src = `../images/${single_pokemon.id}.png`
+    fillCardFront(pokeFront, single_pokemon)
+    fillCardBack(pokeBack, single_pokemon)
 
-    pokeDiv.appendChild (name)
+    pokeScene.setAttribute('class','scene')
+    pokeCard.setAttribute('class','card')
+    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(pokeBack)
+    pokeScene.appendChild(pokeCard)
+    
+    
+    let pokeDiv = document.createElement('div')
+    pokeDiv.className = "pokeDiv"
+    let name = document.createElement('h3')
+    let pic = document.createElement('img')
+
+    let pokeNum = getPokeNumber(single_pokemon.url)
+
+    name.textContent = single_pokemon.name
+
+    let picNum = getPokeNumber(single_pokemon.id)
+
+    pic.src = `../images/${picNum}.png`
+    console.log(picNum)
+
+    pokeDiv.appendChild(name)
     pokeDiv.appendChild(pic)
 
     mainArea.appendChild(pokeDiv)
 
 
-    }
-   )}
+}
+//    )
+// }
 
-   function getPokeNumber(id)
-{ if (id < 10) return `00${id}`
- if (id > 9 && id < 100){ 
-    return `0${id}`
-} else return id 
+function getPokeNumber(id) {
+    if (id < 10) return `00${id}`
+    if (id > 9 && id < 100) {
+        return `0${id}`
+    } else return id
 }
