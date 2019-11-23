@@ -36,22 +36,25 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 let mainArea = document.querySelector('main')
 
     function populateDOM(single_pokemon) {
-    let pokeCard = document.createElement('div')
-    let pokeFront = document.createElement('div')
-    let pokeBack = document.createElement('div')
+    // let pokeCard = document.createElement('div')
+    // let pokeFront = document.createElement('div')
+    // let pokeBack = document.createElement('div')
     
-    fillCardFront(pokeFront, single_pokemon)
-    fillCardBack(pokeBack, single_pokemon)
+    // fillCardFront(pokeFront, single_pokemon)
+    // fillCardBack(pokeBack, single_pokemon)
 
-    pokeScene.setAttribute('class','scene')
-    pokeCard.setAttribute('class','card')
-    pokeCard.appendChild(pokeFront)
-    pokeCard.appendChild(pokeBack)
-    pokeScene.appendChild(pokeCard)
+    // pokeScene.setAttribute('class','scene')
+    // pokeCard.setAttribute('class','card')
+    // pokeCard.appendChild(pokeFront)
+    // pokeCard.appendChild(pokeBack)
+    // pokeScene.appendChild(pokeCard)
     
-    
+    // pokeDiv.setAttribute('class','charDivs')
+    // pic.setAttribute('class','picDivs')
+
+   
+
     let pokeDiv = document.createElement('div')
-    pokeDiv.className = "pokeDiv"
     let name = document.createElement('h3')
     let pic = document.createElement('img')
 
@@ -63,11 +66,11 @@ let mainArea = document.querySelector('main')
 
     pic.src = `../images/${picNum}.png`
     console.log(picNum)
-
+     
     pokeDiv.appendChild(name)
     pokeDiv.appendChild(pic)
-
     mainArea.appendChild(pokeDiv)
+    
 
 
 }
@@ -80,3 +83,8 @@ function getPokeNumber(id) {
         return `0${id}`
     } else return id
 }
+
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});

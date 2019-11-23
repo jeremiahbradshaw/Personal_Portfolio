@@ -10,7 +10,7 @@ console.log (Male)
 let Female = people.filter(FemalePeople => FemalePeople["gender"] == "female")
 console.log (Female)
 
-let na = people.filter(naPeople => naPeople["gender"] == "n/a")
+let na = people.filter(naPeople => naPeople["gender"] == "n/a","none")
 console.log (na)
 
 let maleBtn = document.getElementById("male").addEventListener('click', () => {
@@ -21,7 +21,7 @@ let femaleBtn = document.getElementById("female").addEventListener('click', () =
     cardMaker(Female)
 })
 
-let naBtn = document.getElementById("n/a").addEventListener('click', () => {
+let naBtn = document.getElementById("n/a","hermaphrodite", "none").addEventListener('click', () => {
     cardMaker(na)
 })
 
