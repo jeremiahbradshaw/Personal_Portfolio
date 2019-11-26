@@ -73,10 +73,7 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 
     mainArea.appendChild(pokeScene)
 
-    // pokeCard.addEventListener('click', function(){
-    //     pokeCard.classList.toggle('is-flipped')
-    // }
-    // )
+    
     
     pokeDiv.setAttribute('class','charDivs')
     pic.setAttribute('class','picDivs')

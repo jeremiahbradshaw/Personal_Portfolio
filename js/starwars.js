@@ -4,6 +4,9 @@ const peopledata = people
 let mainHeader = document.querySelector('header')
 let mainArea = document.querySelector("#starwars")
 
+let Characters = people.filter(CharacterPeople =>["gender"] == "gender")
+console.log (Characters)
+
 let Male = people.filter(MalePeople => MalePeople["gender"] == "male")
 console.log (Male)
 
@@ -12,6 +15,10 @@ console.log (Female)
 
 let na = people.filter(naPeople => naPeople["gender"] == "n/a","none")
 console.log (na)
+
+let CharBtn = document.getElementById("gender").addEventListener('click', () => {
+    cardMaker (Characters)
+})
 
 let maleBtn = document.getElementById("male").addEventListener('click', () => {
     cardMaker(Male)
