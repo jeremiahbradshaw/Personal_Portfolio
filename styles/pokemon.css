@@ -39,11 +39,8 @@ div{
     border-color: black;
     border-width: 20px;
     border-radius: 10px;
-    justify-content: center;
     font-family: 'Gill Sans';
-
- 
-    background-color: rgb(73, 134, 190);
+    background-color: rgb(190, 73, 165);
 }
 
 button{
@@ -91,7 +88,7 @@ button{
   }
   
   .card__face--back {
-    background: rgb(57, 57, 211);
+    background: rgb(255, 255, 255);
     transform: rotateY(180deg);
   }
   
