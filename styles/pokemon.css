@@ -8,11 +8,14 @@ main {
     max-width: 1280;
     margin: 0 auto;
     margin-bottom: 6rem;
-    
+    background-color: aquamarine;
 }
 
 .picDivs{
-  width: 100%;
+  border-style: solid;
+  border-color: yellow;
+  border-width: 4px;
+  box-shadow: 2px 2px 2px 2px #252525;
 }
 
 .charDivs{
@@ -35,26 +38,20 @@ p{
   color: black;
 }
 
-div{
-    border-color: black;
-    border-width: 20px;
-    border-radius: 10px;
-    font-family: 'Gill Sans';
-    background-color: rgb(190, 73, 165);
-}
+
 
 button{
     width: 150px;
     height: 80px;
     color: yellow;
-    background-color: rgb(36, 87, 134);
+    background-color: rgb(39, 105, 167);
+    font-size: 1.5rem;
 }
 
 .scene {
     width: 200px;
     height: 260px;
     border: 1px solid #CCC;
-    margin: 40px 0;
     perspective: 600px;
   }
   
@@ -69,6 +66,10 @@ button{
   
   .card.is-flipped {
     transform: rotateY(180deg);
+    background-color: rgb(68, 68, 219);
+    border-style: solid;
+    border-color: yellow;
+    border-width: 10px;
   }
   
   .card__face {
@@ -81,14 +82,19 @@ button{
     font-weight: bold;
     font-size: 40px;
     backface-visibility: hidden;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 10px;
+    border-radius: 8px;
   }
   
   .card__face--front {
     background: rgb(203, 211, 97);
+    width: 180px;
   }
   
   .card__face--back {
-    background: rgb(255, 255, 255);
+    background: rgb(25, 75, 214);
     transform: rotateY(180deg);
   }
   
