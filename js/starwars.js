@@ -44,6 +44,8 @@ function cardMaker(arr){
         let gender = document.createElement('p')
         let pic = document.createElement ('img')
         
+        personDiv.className="personDiv";
+
         personDiv.appendChild(name)
         personDiv.appendChild(gender)
         personDiv.appendChild(pic)
@@ -66,6 +68,8 @@ function cardMaker(arr){
     let name = document.createElement ('h3')
     let gender = document.createElement('p')
     let pic = document.createElement ('img')
+    
+    personDiv.setAttribute("class","personDiv")
     
     personDiv.appendChild(name)
     personDiv.appendChild(gender)

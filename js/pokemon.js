@@ -86,12 +86,11 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
         let pokeNum = getPokeNumber(data.id)
         pic.src = `../assets/images/${pokeNum}.png`
         pokeFront.appendChild(pic)
-        // console.log(name)
         pokeFront.appendChild(name)
     }
 
     function fillCardBack(pokeBack, data){
-        pokeBack.setAttribute('class', 'card_face card_face--')
+        pokeBack.setAttribute('class', 'card_face card_face--back')
         let pokeOrder = document.createElement('p')
         let pokeHP = document.createElement('h5')
         pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
