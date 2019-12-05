@@ -76,14 +76,13 @@ button{
     text-align: center;
     font-weight: bold;
     font-size: 40px;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
     background: rgb(203, 211, 97);
     width: 180px;
     border-style: solid;
     border-color: yellow;
     border-width: 10px;
     border-radius: 8px;
-    transform: rotateY(180deg);
 
     
   }
@@ -101,7 +100,7 @@ button{
   
   .card__face--back {
     /* background-color: rgb(25, 75, 214); */
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
     /* border-style: solid;
     border-color: yellow;
     border-width: 10px;
