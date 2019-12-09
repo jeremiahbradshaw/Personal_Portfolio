@@ -14,12 +14,17 @@
 }
 
 img{
-  width:500px;
+  width:400px;
+  height: 270px;
   padding:10px;
   justify-content: center;
   display: flex;
 }
 
+.mephoto{
+  width:400px;
+  height: 400px;
+}
 #nav-list{
 display: flex;
 justify-content:space-around;
