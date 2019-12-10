@@ -1,4 +1,6 @@
-
+html{
+  background: rgb(103, 103, 197);
+}
 
 main {
     display: grid;
@@ -8,12 +10,14 @@ main {
     max-width: 1280;
     margin: 0 auto;
     margin-bottom: 6rem;
-    background-color: rgb(34, 107, 150);
+    font-family: futura;
 }
+
+
 
 .picDivs{
   border-style: solid;
-  border-color: yellow;
+  border-color: rgb(255, 232, 23);
   border-width: 4px;
   box-shadow: 2px 2px 2px 2px #252525;
 }
@@ -43,9 +47,19 @@ p{
 button{
     width: 150px;
     height: 80px;
-    color: yellow;
-    background-color: rgb(39, 105, 167);
+    color:rgb(255, 232, 23);
+    background-color: rgb(35, 104, 168);
     font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: #2d0f74  -8px 8px;
+    font-family: futura;
+}
+
+#buttonsec{
+  display: flex;
+  justify-content: center;
+  padding-bottom:20px;
 }
 
 .scene {
@@ -62,6 +76,8 @@ button{
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    background-color: blue;
+  
   }
   
   .card.is-flipped {
@@ -80,12 +96,52 @@ button{
     background: rgb(203, 211, 97);
     width: 180px;
     border-style: solid;
-    border-color: yellow;
+    border-color: rgb(255, 232, 23);
     border-width: 10px;
     border-radius: 8px;
 
     
   }
+  
+  .card__back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 260px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    /* backface-visibility: hidden; */
+    background: rgb(203, 211, 97);
+    width: 180px;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 10px;
+    border-radius: 8px;
+
+  }
+
+  #pokemonlogo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 40px;
+    
+    
+  }
+
+  #pokemonlogoimage{
+    width: 400px;
+  }
+
+  #pokemonpic{
+    width: 200px;
+    height: 200px;
+  }
+
+
+
+
   
   .card__face--front {
     /* background: rgb(203, 211, 97);
