@@ -4,26 +4,61 @@ I created a personal portfolio for my DGM 1600 class
 
 ## Description
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+I created a Starwars Page and a Pokemon Card Page and here are some examples of the code that I used.
 
-```bash
-pip install foobar
+## Css Example - styles/pokemon.css
+```
+     .card {
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative; 
+    line-height: 6px;
+    text-align: center;
+    font-size: 2rem; 
+    background: rgb(35, 104, 168);
+    width: 180px;
+    border-style: solid;
+    border-color: rgb(255, 232, 23);
+    border-width: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+```
+## Basic Java Script Example - js/pokemon.js - I created variables!!!
+```
+   let Characters = people.filter(CharacterPeople =>["gender"] == "gender")
+console.log (Characters)
+
+let Male = people.filter(MalePeople => MalePeople["gender"] == "male")
+console.log (Male)
+
+let Female = people.filter(FemalePeople => FemalePeople["gender"] == "female")
+console.log (Female)
+
+let na = people.filter(naPeople => naPeople["gender"] == "n/a","none")
+console.log (na)
+
 ```
 
-## Usage
+## Basic Data Structures Example - js/pokemon,js - I was able to slice the beginning of an array off and replace it with an Upper Case letter. 
+```
+    pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
-```python
-import foobar
+```
+## Object Oriented Programming Example
+```
+   Here is an example of when I used csS
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```
+## ES6 Example
+```
+   Here is an example of when I used csS
+
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
