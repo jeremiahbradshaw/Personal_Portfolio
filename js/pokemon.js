@@ -59,9 +59,8 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
     let pokeBack = document.createElement('div')
     
     
-    pokeCard.addEventListener( 'click', function() {
-        pokeCard.classList.toggle('is-flipped');
-        });
+  
+    
     fillCardFront(pokeFront, single_pokemon)
     fillCardBack(pokeBack, single_pokemon)
 
@@ -73,7 +72,9 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 
     mainArea.appendChild(pokeScene)
 
-    
+    pokeCard.addEventListener( 'click', function() {
+        pokeCard.classList.toggle('is-flipped');
+        });
     
     pokeDiv.setAttribute('class','charDivs')
     pic.setAttribute('class','picDivs')
@@ -90,7 +91,7 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
     }
 
     function fillCardBack(pokeBack, data){
-        pokeBack.setAttribute('class', 'card_face card_face--back')
+        pokeBack.setAttribute('class', 'card__face card_face--back')
         let pokeOrder = document.createElement('p')
         let pokeHP = document.createElement('h5')
         pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
