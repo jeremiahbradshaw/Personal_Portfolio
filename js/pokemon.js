@@ -28,22 +28,19 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
                 })
         }
 
-// let userInput = document.getElementById('input')
-
-// const theData = getAPIData(`https://pokeapi.co/api/v2/pokemon/${userInput}`)
-//     .then(data => {
-//         console.log(theData)
-//         for (const pokemon of data.results) {
-//             getAPIData(pokemon.url)
-//                 .then(pokedata => {
-//                     console.log(pokedata)
-//                     populateDOM(pokedata)
-//                 })
-//         }
 
 
         document.querySelector('#pokeButton').addEventListener('click', () => {
-            populateDOM()
+            let pokeId= prompt("Throw your poke number!")
+            if(!pokeId > 0 && !pokeId < 810){
+                alert(
+                    "Nice try but you missed!"
+                )
+            }let retrivedPokemon = getAPIData(`https://pokeapi.co/api/v2/pokemon/${
+                pokeId }`).then(result => {
+                    populateDOM(result)
+                }).catch(error => console.log(error))
+              
         })
 
 
