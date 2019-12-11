@@ -1,10 +1,11 @@
-class Pokemon{
-constructor(id,name,stats){
-    this.id = id
-    this.name = name
-    this.base_stat = stats
-    
-}}
+class Pokemon {
+    constructor(id, name, stats) {
+        this.id = id
+        this.name = name
+        this.base_stat = stats
+        this.question = "Whats my name?"
+    }
+}
 
 async function getAPIData(url) {
     try {
@@ -31,52 +32,55 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 
 
         document.querySelector('#pokeButton').addEventListener('click', () => {
-            let pokeId= prompt("Throw your poke number!")
-            if(!pokeId > 0 && !pokeId < 810){
+            let pokeId = prompt("Throw your poke number!")
+            if (!pokeId > 0 && !pokeId < 810) {
                 alert(
                     "Nice try but you missed!"
                 )
-            }let retrivedPokemon = getAPIData(`https://pokeapi.co/api/v2/pokemon/${
+            }
+            let retrivedPokemon = getAPIData(`https://pokeapi.co/api/v2/pokemon/${
                 pokeId }`).then(result => {
-                    populateDOM(result)
-                }).catch(error => console.log(error))
-              
+                populateDOM(result)
+            }).catch(error => console.log(error))
+
         })
 
 
     })
-    
-    
-    let mainArea = document.querySelector('main')
 
-    function populateDOM(single_pokemon) {
-    let pokeScene= document.createElement('div')
+
+let mainArea = document.querySelector('main')
+
+function populateDOM(single_pokemon) {
+
+
+    let pokeScene = document.createElement('div')
     let pokeCard = document.createElement('div')
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
-    
-    
-  
-    
+
+
+
+
     fillCardFront(pokeFront, single_pokemon)
     fillCardBack(pokeBack, single_pokemon)
 
-    pokeScene.setAttribute('class','scene')
-    pokeCard.setAttribute('class','card')
+    pokeScene.setAttribute('class', 'scene')
+    pokeCard.setAttribute('class', 'card')
     pokeCard.appendChild(pokeFront)
     pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
 
     mainArea.appendChild(pokeScene)
 
-    pokeCard.addEventListener( 'click', function() {
+    pokeCard.addEventListener('click', function () {
         pokeCard.classList.toggle('is-flipped');
-        });
-    
+    });
+
     pokeDiv.setAttribute('class','charDivs')
     pic.setAttribute('class','picDivs')
-    
-    function fillCardFront(pokeFront, data){
+
+    function fillCardFront(pokeFront, data) {
         pokeFront.setAttribute('class', 'card__face card__face--front')
         let name = document.createElement('p')
         let pic = document.createElement('img')
@@ -87,8 +91,10 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
         pokeFront.appendChild(name)
     }
 
-    function fillCardBack(pokeBack, data){
-        pokeBack.setAttribute('class', 'card__face card_face--back')
+  
+    
+        function fillCardBack(pokeBack, data) {
+        pokeBack.setAttribute('class', 'card__face card__face--back')
         let pokeOrder = document.createElement('p')
         let pokeHP = document.createElement('h5')
         pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
@@ -109,10 +115,10 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
     pokeDiv.appendChild(name)
     pokeDiv.appendChild(pic)
     mainArea.appendChild(pokeDiv)
-    
 
 
-    }
+
+}
 
 
 function getPokeNumber(id) {
@@ -121,5 +127,3 @@ function getPokeNumber(id) {
         return `0${id}`
     } else return id
 }
-
-
