@@ -46,19 +46,36 @@ console.log (na)
 
 ```
 
-## Basic Data Structures Example - js/pokemon,js - I was able to slice the beginning of an array off and replace it with an Upper Case letter. 
+## Basic Data Structures Example - js/pokemon.js - I was able to slice the beginning of an array off and replace it with an Upper Case letter. 
 ```
     pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
 ```
-## Object Oriented Programming Example
+## Object Oriented Programming Example - js/pokemon.js - Used constructor to build out pokemon card. 
 ```
-   Here is an example of when I used csS
+  class Pokemon {
+    constructor(id, name, stats) {
+        this.id = id
+        this.name = name
+        this.base_stat = stats
+        
+    }
+}
 
 ```
-## ES6 Example
+## ES6 Example - js/starwars.js - I used arrow functions to make the buttons work.  
 ```
-   Here is an example of when I used csS
+   let CharBtn = document.getElementById("gender").addEventListener('click', () => {
+    cardMaker (Characters)
+})
+
+let maleBtn = document.getElementById("male").addEventListener('click', () => {
+    cardMaker(Male)
+})
+
+let femaleBtn = document.getElementById("female").addEventListener('click', () => {
+    cardMaker(Female)
+})
 
 ```
 
